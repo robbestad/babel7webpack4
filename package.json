@@ -1,0 +1,35 @@
+{
+  "name": "babel7app",
+  "version": "1.0.0",
+  "main": "index.js",
+  "license": "MIT",
+  "scripts": {
+    "build": "webpack",
+    "start": "node bin/server.js"
+  },
+  "dependencies": {
+    "@babel/core": "^7.0.0-beta.40",
+    "@babel/plugin-proposal-class-properties": "^7.0.0-beta.40",
+    "@babel/plugin-proposal-decorators": "^7.0.0-beta.40",
+    "@babel/plugin-transform-runtime": "^7.0.0-beta.40",
+    "@babel/polyfill": "^7.0.0-beta.40",
+    "@babel/preset-env": "^7.0.0-beta.40",
+    "@babel/preset-react": "^7.0.0-beta.40",
+    "@babel/register": "^7.0.0-beta.40",
+    "@babel/runtime": "^7.0.0-beta.40",
+    "babel-loader": "8.0.0-beta.0",
+    "bluebird": "^3.5.1",
+    "bunyan": "^1.8.12",
+    "koa": "^2.3.0",
+    "koa-body": "^2.5.0",
+    "koa-bodyparser": "^4.2.0",
+    "koa-passport": "^4.0.1",
+    "koa-proxy": "^0.9.0",
+    "koa-router": "^7.2.1",
+    "koa-send": "^4.1.1",
+    "koa-session": "^5.5.0",
+    "lodash-es": "^4.17.5",
+    "webpack": "^4.0.0-beta.2",
+    "webpack-cli": "^2.0.6"
+  }
+}
