@@ -1,4 +1,4 @@
-export default = {
-  serverPort: 3000
+export default {
+  serverPort: 3666
 }
 

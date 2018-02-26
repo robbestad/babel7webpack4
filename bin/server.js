@@ -2,30 +2,24 @@ import Koa from "koa"
 import Router from "koa-router"
 import config from "./config"
 import logger from "koa-logger"
+import bodyParser from "koa-body"
+import staticCache from "koa-static-cache"
+import convert from "koa-convert"
+import path from "path"
 
-const publicRouter = new Router()
-const routes= require('./routes/index')
+// Add routes
+import catchAllRouter from './routes/index'
+
 const app = new Koa()
-  .use(bodyParser({jsonLimit: '50mb'}))
-  .use(async (ctx, next) => {
-    try {
-      await next()
-    } catch (err) {
-      ctx.status = err.status || 500
-      ctx.body = err.message
-      ctx.app.emit('error', err, ctx)
-      throw err
-    }
-  })
-
-  .use(logger())
-  .use(routes.allowedMethods())
-  .use(routes.routes())
-  .use(async (ctx) => {
-    await send(ctx, '../src/index.html')
-  })
-
-  .listen(config.app.serverPort)
+.use(convert(staticCache(path.join(__dirname, "../dist"), { maxAge: 365 * 24 * 60 * 60 })))
+.use(bodyParser())
+.use(logger())
+.use(catchAllRouter(config).routes())
+.use(catchAllRouter(config).allowedMethods())
+app.listen(config.serverPort, err => {
+	if (err) return console.error("server", err)
+	console.log(`==> Listening on http://0.0.0.0:${config.serverPort}/ 🚀 `)
+})
 
 
 
