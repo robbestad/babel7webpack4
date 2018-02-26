@@ -4,8 +4,11 @@ import path from "path"
 
 const router = new Router()
 
-function wrapper(config) {
+function wrapper(config, logger) {
+	const log = logger.child({component: "routes"})
+
 	return router.get("/", async ctx => {
+		log.debug("/")
 		await send(ctx, `${path.join("/src/index.html")}`)
 	})
 }

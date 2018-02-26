@@ -1,4 +1,6 @@
 export default {
-  serverPort: 3666
+	title:      "demo-app",
+	env:        process.env.NODE_ENV === "production" ? "production" : "development",
+	serverPort: 3666
 }
 
