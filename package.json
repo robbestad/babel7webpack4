@@ -4,6 +4,9 @@
   "main": "index.js",
   "sideEffects": false,
   "license": "MIT",
+  "engines": {
+    "node": "8.9.4"
+  },
   "scripts": {
     "build": "webpack",
     "dist": "rimraf dist/bundle.js && webpack -p",
