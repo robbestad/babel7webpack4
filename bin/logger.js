@@ -2,7 +2,7 @@ import bunyan from "bunyan"
 import path from "path"
 import PrettyStream from "bunyan-prettystream"
 
-function isDev(config) {
+const isDev = config => {
 	return config.env === "development"
 }
 

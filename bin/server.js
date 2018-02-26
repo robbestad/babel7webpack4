@@ -1,12 +1,15 @@
+// Add imports
 import Koa from "koa"
 import Router from "koa-router"
-import config from "./config"
 import bodyParser from "koa-body"
 import staticCache from "koa-static-cache"
 import convert from "koa-convert"
 import path from "path"
 
-// configure logger
+// Add config
+import config from "./config"
+
+// Configure logger
 import createLogger from "./logger"
 const logger = createLogger.create(config)
 const log = logger.child({component: "server"})
@@ -23,6 +26,3 @@ const app = new Koa()
 	if (err) return log.error("server", err)
 	log.debug(`==> Listening on http://0.0.0.0:${config.serverPort}/ 🚀 `)
 })
-
-
-
