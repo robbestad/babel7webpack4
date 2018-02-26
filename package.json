@@ -1,5 +1,5 @@
 {
-  "name": "babel7app",
+  "name": "babel7_webpack4_react-helloworld",
   "version": "1.0.0",
   "main": "index.js",
   "license": "MIT",
@@ -8,6 +8,7 @@
     "dist": "rimraf dist/bundle.js && webpack -p",
     "start": "node bin/index.js"
   },
+  "author": "Sven Anders Robbestad <sven.anders.robbestad@acando.no> (https://www.robbestad.com/)",
   "dependencies": {
     "@babel/core": "^7.0.0-beta.40",
     "@babel/plugin-proposal-class-properties": "^7.0.0-beta.40",
