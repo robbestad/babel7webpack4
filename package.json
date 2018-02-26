@@ -2,6 +2,7 @@
   "name": "babel7_webpack4_react-helloworld",
   "version": "1.0.0",
   "main": "index.js",
+  "sideEffects": false,
   "license": "MIT",
   "scripts": {
     "build": "webpack",
